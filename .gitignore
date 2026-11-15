@@ -1,0 +1,16 @@
+# Exclude Output Files (Required by rubric)
+output/
+*.txt
+
+# Exclude Secrets & Environments (Required by rubric)
+.env
+.venv/
+env/
+venv/
+
+# Exclude Python Build Artifacts (Required by rubric)
+__pycache__/
+*.pyc
+*.pyo
+build/
+dist/
