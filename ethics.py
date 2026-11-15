@@ -1,4 +1,3 @@
-
 # Ethical warning for XSS Payload Generator
 
 def show_warning():
@@ -13,19 +12,15 @@ def show_warning():
     print("Testing must stay within the approved scope.")
     print("========================================")
 
-
-
 def check_authorization():
-    answer = input("Do you have written authorization? (YES/NO): ")
+    answer = input("Do you have written authorization? (y/n): ")
 
-    if answer.strip().upper() == "YES":
+    if answer.strip().lower() in ["y", "yes"]:
         print("Authorization confirmed.")
         return True
     else:
         print("Access denied. Authorization is required.")
         return False
-
-
 
 if __name__ == "__main__":
     show_warning()
