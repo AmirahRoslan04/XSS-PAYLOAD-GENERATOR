@@ -21,16 +21,19 @@ def _timestamp():
 def save_payloads(base, encoded):
     ensure_output_dir()
 
+    #Building Heather for the entry list
     lines = [
         DIVIDER,
         f"Timestamp: {_timestamp()}",
         f"Base payload: {base}", ]
     
+    #Using looping to avoid hardcoding and to avoid fragile coding
     for label, value in encoded.items():
         lines.append(f"  [{label}] {value}")
     lines.append("")
     entry = "\n".join(lines) + "\n"
 
+    #Putting output into the file
     try:
         with open(OUTPUT_FILE, "a", encoding="utf-8") as f:
             f.write(entry)
