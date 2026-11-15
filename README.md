@@ -9,8 +9,8 @@ This tool was developed as a group project focusing on Web Application Attacks, 
 **Compliance:** This tool is developed strictly for educational purposes and authorized penetration testing only. 
 
 Users must ensure compliance with the **Malaysia Computer Crimes Act 1997** (or applicable local laws). 
-* Any unauthorized use of these payloads against third-party systems, networks, or applications is strictly prohibited and illegal.
-* The developers of this tool assume no liability for misuse or damage caused by this software.
+- Any unauthorized use of these payloads against third-party systems, networks, or applications is strictly prohibited and illegal.
+- The developers of this tool assume no liability for misuse or damage caused by this software.
 
 ### Rules of Engagement (RoE)
 1. **Authorization:** Only use this tool against applications where explicit, written consent has been granted by the owner.
@@ -19,17 +19,33 @@ Users must ensure compliance with the **Malaysia Computer Crimes Act 1997** (or 
 
 ## 🛠️ Features & Encoding Engine
 This tool takes a base XSS payload (e.g., `<script>alert(1)</script>`) and automatically generates three obfuscated variations to test different input validation filters:
-* **URL Encoding:** Converts special characters to `%xx` format for testing URL-based injection points.
-* **Base64 Encoding:** Encodes the payload into Base64 format for testing applications that decode base64 inputs.
-* **HTML Entity Encoding:** Converts characters like `<` and `>` into HTML entities to bypass basic WAFs (Web Application Firewalls).
+- **URL Encoding:** Converts special characters to `%xx` format for testing URL-based injection points.
+- **Base64 Encoding:** Encodes the payload into Base64 format for testing applications that decode base64 inputs.
+- **HTML Entity Encoding:** Converts characters like `<` and `>` into HTML entities to bypass basic WAFs (Web Application Firewalls).
+
+## 🔄 Attack Lifecycle Mapping
+In the context of the standard penetration testing lifecycle, this tool is mapped to the following phases:
+- **Vulnerability Analysis:** Testers use the generated obfuscated payloads to map out input sanitization filters within the target application.
+- **Exploitation:** Once an injection point is discovered, testers utilize the encoded payloads (like Base64 Executable or JS CharCode) to bypass Web Application Firewalls (WAFs) and demonstrate the impact of the vulnerability.
+
+## 🛡️ Responsible Disclosure
+If you discover a valid XSS vulnerability using this tool during an authorized assessment, you must follow responsible disclosure practices:
+1. Halt further exploitation immediately once the vulnerability is confirmed (Proof of Concept stage).
+2. Do not exfiltrate sensitive data or disrupt the application's availability.
+3. Report the vulnerability and the exact payload used to the system owner or security team promptly via their official channels.
+
+## ⚠️ Limitation Notes
+- **No Automated Injection:** This is an offline payload generator. It does not automatically send HTTP requests or inject payloads into web forms.
+- **Advanced WAFs:** While the tool provides multiple encoding formats, modern AI-driven Web Application Firewalls may still detect and block some of the generated payloads.
+- **Scope limitation:** The tool relies on standard encoding libraries and does not include custom cryptographic bypasses.
 
 ## 🗂️ Modular Architecture
 The project is built using standard Python libraries and divided into 5 distinct modules for clean code management and team collaboration:
-* `main.py` - Core execution loop and module integration.
-* `encoders.py` - The encoding engine (URL, Base64, HTML).
-* `ethics.py` - Enforces the legal disclaimer and authorization kill-switch.
-* `storage.py` - Handles "Safe Defaults" by saving outputs locally to `.txt` files.
-* `ui.py` - Terminal interface and visual formatting.
+- `main.py` - Core execution loop and module integration.
+- `encoders.py` - The encoding engine (URL, Base64, HTML).
+- `ethics.py` - Enforces the legal disclaimer and authorization kill-switch.
+- `storage.py` - Handles "Safe Defaults" by saving outputs locally to `.txt` files.
+- `ui.py` - Terminal interface and visual formatting.
 
 ## 🚀 Installation & Usage
 
@@ -37,8 +53,8 @@ The project is built using standard Python libraries and divided into 5 distinct
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
-   cd YOUR_REPOSITORY_NAME
+   git clone [https://github.com/AmirahRoslan04/XSS-PAYLOAD-GENERATOR.git](https://github.com/AmirahRoslan04/XSS-PAYLOAD-GENERATOR.git)
+   cd XSS-PAYLOAD-GENERATOR
 
 2. Run the application:
    ```bash
@@ -47,6 +63,8 @@ The project is built using standard Python libraries and divided into 5 distinct
 
 3. Follow the on-screen prompts to authorize the session and input your base payloads. Check the output/payloads.txt file for your generated results.
 
+## 📸 Screenshots
+![Tool Interface](Screenshot-ui.png)
 
 ## 👥 Contributors
 * **Nur Amirah Binti Roslan (52215125785)** - Core Engine & Integration (`main.py`)
