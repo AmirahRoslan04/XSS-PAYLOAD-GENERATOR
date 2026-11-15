@@ -65,6 +65,7 @@ The project is built using standard Python libraries and divided into 5 distinct
 
 ## 📸 Screenshots
 ![Tool Interface](Screenshot-ui.png)
+![Tool Interface](Screenshot-ui2.png)
 
 ## 👥 Contributors
 * **Nur Amirah Binti Roslan (52215125785)** - Core Engine & Integration (`main.py`)
