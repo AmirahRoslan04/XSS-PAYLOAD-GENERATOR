@@ -35,7 +35,8 @@ def save_payloads(base, encoded):
         with open(OUTPUT_FILE, "a", encoding="utf-8") as f:
             f.write(entry)
         return OUTPUT_FILE
-
+    except OSError:
+        return None
 
 def get_output_path():
     return OUTPUT_FILE
