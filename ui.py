@@ -1,4 +1,3 @@
-
 def show_banner():
     print("=" * 60)
     print("       XSS PAYLOAD GENERATOR & OBFUSCATOR")
@@ -8,7 +7,7 @@ def show_banner():
 
 def get_payload():
     while True:
-        payload = input("\nEnter your base payload: ").strip()
+        payload = input("\nEnter your base payload (or 'exit' to quit): ").strip()
 
         if not payload:
             print("[!] Payload cannot be empty.")
@@ -25,30 +24,16 @@ def select_encodings(encoding_options):
         print(f"{number}. {option}")
 
     while True:
-        choice = input(
-            "\nSelect methods (e.g. 1,2,3): "
-        ).strip()
+        choice = input("\nSelect methods (e.g. 1,2,3): ").strip()
 
         try:
-            selected_numbers = [
-                int(number.strip())
-                for number in choice.split(",")
-            ]
-
+            selected_numbers = [int(number.strip()) for number in choice.split(",")]
             if not selected_numbers:
                 raise ValueError
-
-            if any(
-                number < 1 or number > len(encoding_options)
-                for number in selected_numbers
-            ):
+            if any(number < 1 or number > len(encoding_options) for number in selected_numbers):
                 raise ValueError
 
-            selected = list(dict.fromkeys(
-                encoding_options[number - 1]
-                for number in selected_numbers
-            ))
-
+            selected = list(dict.fromkeys(encoding_options[number - 1] for number in selected_numbers))
             return selected
 
         except ValueError:
@@ -67,9 +52,7 @@ def display_results(results):
 
 def ask_save():
     while True:
-        choice = input(
-            "\nDo you want to save the results? (Y/N): "
-        ).strip().lower()
+        choice = input("\nDo you want to save the results? (Y/N): ").strip().lower()
 
         if choice in ("y", "yes"):
             return True
