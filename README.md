@@ -65,7 +65,6 @@ The project is built using standard Python libraries and divided into 5 distinct
 
 ## 📸 Screenshots
 ![Tool Interface](Screenshot-ui.png)
-![Tool Interface](Screenshot-ui2.png)
 
 ## 🎥 Demo Video
 Watch the tool in action (legal disclaimer gate, payload generation, and local file saving):
