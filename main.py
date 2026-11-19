@@ -6,6 +6,7 @@ import storage
 
 def main():
     ui.show_banner()
+    ethics.show_warning()
     
     if not ethics.check_authorization():
         sys.exit()
@@ -28,4 +29,8 @@ def main():
                 print("\n[-] Error saving payloads to disk.")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n[!] Exiting safely. Goodbye!")
+        sys.exit(0)
