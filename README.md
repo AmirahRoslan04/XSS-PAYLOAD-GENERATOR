@@ -67,6 +67,10 @@ The project is built using standard Python libraries and divided into 5 distinct
 ![Tool Interface](Screenshot-ui.png)
 ![Tool Interface](Screenshot-ui2.png)
 
+## 🎥 Demo Video
+Watch the tool in action (legal disclaimer gate, payload generation, and local file saving):
+- [Watch Demo Video](demo.mp4)
+
 ## 👥 Contributors
 * **Nur Amirah Binti Roslan (52215125785)** - Core Engine & Integration (`main.py`)
 * **Isyraf Bin Salahuddin (52215225140)** - Encoding Engine (`encoders.py`)
